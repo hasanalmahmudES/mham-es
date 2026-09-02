@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md Hasan Al Mahmud — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal: #1F4A44;
+    --teal-deep: #16332F;
+    --ochre: #C08A3E;
+    --paper: #FBFAF7;
+    --ink: #22261F;
+    --ink-soft: #5B6058;
+    --line: #E1DED4;
+    --page-w: 210mm;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin: 0;
+    background: #E9E7E0;
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15.5px;
+    line-height: 1.58;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page{
+    max-width: var(--page-w);
+    margin: 32px auto;
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 297mm;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    opacity: 0;
+    animation: rise 0.6s ease-out forwards;
+  }
+
+  @keyframes rise{ from{opacity:0; transform: translateY(8px);} to{opacity:1; transform:none;} }
+
+  /* ---------------- Sidebar ---------------- */
+
+  .sidebar{
+    background: var(--teal);
+    color: #F3F1EA;
+    padding: 40px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  .avatar{
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: var(--teal-deep);
+    border: 1px solid rgba(243,241,234,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #F3F1EA;
+  }
+
+  .sidebar h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 0.98rem;
+    margin: 0 0 12px;
+    color: #F3F1EA;
+    border-bottom: 1px solid rgba(243,241,234,0.28);
+    padding-bottom: 8px;
+  }
+
+  .contact-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.86rem;
+  }
+
+  .contact-list li{
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    color: #DCE3DA;
+  }
+
+  .contact-list svg{ width: 15px; height: 15px; flex: none; margin-top: 2px; }
+  .contact-list a{ color: #F3F1EA; text-decoration: none; }
+  .contact-list a:hover{ text-decoration: underline; }
+  .contact-list a:focus-visible{ outline: 2px solid var(--ochre); outline-offset: 2px; }
+
+  .lang-item{ margin-bottom: 14px; }
+  .lang-item:last-child{ margin-bottom: 0; }
+  .lang-name{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.86rem;
+    margin-bottom: 5px;
+    color: #F3F1EA;
+  }
+  .lang-name span:last-child{ color: #C9DAD1; }
+  .lang-bar{
+    height: 5px;
+    background: rgba(243,241,234,0.18);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .lang-bar i{
+    display: block;
+    height: 100%;
+    background: var(--ochre);
+    border-radius: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: fillbar 0.8s 0.4s ease-out forwards;
+  }
+  @keyframes fillbar{ to{ transform: scaleX(1); } }
+
+  .pill-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .pill-list li{
+    font-size: 0.86rem;
+    color: #DCE3DA;
+    padding-left: 14px;
+    position: relative;
+  }
+  .pill-list li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    background: var(--ochre);
+    border-radius: 50%;
+  }
+
+  /* ---------------- Main ---------------- */
+
+  .main{
+    padding: 44px 42px;
+  }
+
+  .name-block{ margin-bottom: 6px; }
+
+  .name{
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 2.15rem;
+    line-height: 1.08;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .role{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.08rem;
+    color: var(--teal);
+    margin: 4px 0 0;
+  }
+
+  .summary{
+    margin: 18px 0 0;
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    max-width: 60ch;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+
+  section.block{ margin-top: 34px; }
+
+  section.block h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.12rem;
+    margin: 0 0 18px;
+    color: var(--ink);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  section.block h2::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .entry{ margin-bottom: 22px; }
+  .entry:last-child{ margin-bottom: 0; }
+
+  .entry-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .entry-title{
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .entry-date{
+    font-size: 0.82rem;
+    color: var(--ochre);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .entry-org{
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin: 2px 0 9px;
+  }
+
+  .entry ul{
+    margin: 0;
+    padding-left: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .entry li{ font-size: 0.92rem; }
+
+  .note{
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    background: rgba(192,138,62,0.14);
+    border: 1px solid rgba(192,138,62,0.4);
+    padding: 1px 7px;
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+
+  .edu-entry{ margin-bottom: 16px; }
+  .edu-entry:last-child{ margin-bottom: 0; }
+  .edu-title{ font-weight: 600; font-size: 0.97rem; margin: 0; }
+  .edu-meta{ font-size: 0.88rem; color: var(--ink-soft); margin: 2px 0 0; }
+  .edu-score{ font-size: 0.85rem; color: var(--teal); font-weight: 500; }
+
+  /* ---------------- Responsive / print ---------------- */
+
+  @media (max-width: 760px){
+    .page{ grid-template-columns: 1fr; margin: 0; box-shadow: none; }
+    .sidebar{ flex-direction: column; }
+    .main{ padding: 32px 22px; }
+  }
+
+  @media print{
+    body{ background: #fff; }
+    .page{
+      box-shadow: none;
+      margin: 0 auto;
+      width: 210mm;
+      min-height: 297mm;
+      animation: none;
+      opacity: 1;
+    }
+    .lang-bar i{ animation: none; transform: scaleX(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; }
+    .page{ opacity: 1; }
+    .lang-bar i{ transform: scaleX(1); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <aside class="sidebar">
+    <div class="avatar">MH</div>
+
+    <div>
+      <h2>Contacto</h2>
+      <ul class="contact-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>L'Hospitalet de Llobregat, 82, 2°1, Barcelona</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2Z"/></svg>
+          <a href="tel:+34602878761">+34 602 87 87 61</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 6.5 12 13 22 6.5"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          <a href="mailto:imham@outlook.es">imham@outlook.es</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Idiomas</h2>
+      <div class="lang-item">
+        <div class="lang-name"><span>Inglés</span><span>B1</span></div>
+        <div class="lang-bar"><i style="width:55%"></i></div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-name"><span>Español</span><span>Básico</span></div>
+        <div class="lang-bar"><i style="width:30%"></i></div>
+      </div>
+    </div>
+
+    <div>
+      <h2>Competencias</h2>
+      <ul class="pill-list">
+        <li>Microsoft Office (nivel avanzado)</li>
+        <li>Herramientas digitales y de comunicación</li>
+        <li>Navegación e investigación en internet</li>
+      </ul>
+    </div>
+
+    <div>
+      
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="name-block">
+      <h1 class="name">Md Hasan Al Mahmud</h1>
+      <p class="role">Logística, Reparto, Hostelería, Atención al Cliente, Multilingüe</p>
+    </div>
+    <p class="summary">
+      Profesional con trayectoria en almacén, reparto y hostelería construida en Bangladés, Rumanía y España.
+      Acostumbrado a entornos de ritmo alto, coordinación de equipos y trato directo con el cliente,
+      actualmente centrado en el sector logístico y comercial en Barcelona.
+    </p>
+
+    <section class="block">
+      <h2>Experiencia laboral</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">Operario de Almacén</p>
+          <p class="entry-date">Feb 2026 — May 2026</p>
+        </div>
+        <p class="entry-org">Dia · Barcelona, España — Supermercado</p>
+        <ul>
+          <li>Carga y descarga de mercancía</li>
+          <li>Ubicación y organización de productos en almacén</li>
+          <li>Limpieza y seguridad del espacio de trabajo</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">Repartidor</p>
+          <p class="entry-date">Oct 2024 — Ene 2026</p>
+        </div>
+        <p class="entry-org">Glovo / Uber Eats · España</p>
+        <ul>
+          <li>Recogida y entrega puntual de pedidos</li>
+          <li>Mantenimiento de la calidad de los alimentos durante el trayecto</li>
+          <li>Servicio al cliente excelente en cada entrega</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">Camarero/a de Pisos</p>
+          <p class="entry-date">Dic 2023 — Oct 2024</p>
+        </div>
+        <p class="entry-org">Homey · Bucarest, Rumanía — Sector hotelero</p>
+        <ul>
+          <li>Limpieza y desinfección de habitaciones</li>
+          <li>Gestión de habitaciones y ropa de cama</li>
+          <li>Mantenimiento general y reporting de incidencias</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">Supervisor de Limpieza</p>
+            
+          <p class="entry-date">Dic 2022 — Jun 2023</p>
+        </div>
+      
+        <p class="entry-org">Dhaka Regency Hotel &amp; Resort · Daca, Bangladés</p>
+        <ul>
+          <li>Inspección de las distintas zonas del hotel para garantizar los estándares de calidad</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <p class="entry-title">Camarero</p>
+          <p class="entry-date">Dic 2021 — May 2022</p>
+        </div>
+        <p class="entry-org">The Garden Kitchen Restaurante</p>
+        <ul>
+          <li>Toma de pedidos y atención a los comensales</li>
+          <li>Conocimiento completo del menú</li>
+          <li>Servicio de mesas</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Formación académica</h2>
+
+      <div class="edu-entry">
+        <p class="edu-title">Licenciatura en Artes (B.A.) — Estudios Islámicos y Árabe</p>
+        <p class="edu-meta">Islamic Arabic University · 2016 — 2019</p>
+        <p class="edu-score">Calificación: 3.83 / 5.00</p>
+      </div>
+
+      <div class="edu-entry">
+        <p class="edu-title">Bachillerato (H.S.C. equivalente)</p>
+        <p class="edu-meta">Madrasah Education Board</p>
+        <p class="edu-score">GPA: 4.38</p>
+      </div>
+
+           <div class="edu-entry">
+        <p class="edu-title">Educación Secundaria (S.S.C. equivalente)</p>
+        <p class="edu-meta">Madrasah Education Board</p>
+        <p class="edu-score">GPA: 4.63</p>
+      </div>
+
+    </section>
+  </main>
+
+</div>
+</body>
+</html>
