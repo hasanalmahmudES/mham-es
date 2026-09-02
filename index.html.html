@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Hasan AL MAHMUD - Professional CV / Portfolio</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm 12mm;
+      background-color: #f8fafc;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #334155;
+      font-size: 10.5pt;
+      line-height: 1.5;
+    }
+
+    /* Container Card Layout */
+    .cv-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Header Banner */
+    .header {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffffff;
+      padding: 28px 32px;
+      position: relative;
+      border-bottom: 4px solid #0ea5e9;
+    }
+
+    .header-content {
+      width: 100%;
+    }
+
+    .name {
+      margin: 0 0 6px 0;
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .title {
+      margin: 0 0 16px 0;
+      font-size: 11pt;
+      font-weight: 500;
+      color: #38bdf8;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .contact-grid {
+      display: table;
+      width: 100%;
+      margin-top: 12px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .contact-item {
+      display: table-cell;
+      font-size: 9.5pt;
+      color: #cbd5e1;
+      padding-right: 12px;
+      vertical-align: middle;
+    }
+
+    .contact-item strong {
+      color: #94a3b8;
+    }
+
+    .contact-item a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    /* Main Body Layout */
+    .body-content {
+      padding: 28px 32px;
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 0 0 14px 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e2e8f0;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 48px;
+      height: 2px;
+      background-color: #0ea5e9;
+    }
+
+    /* About Section */
+    .about-text {
+      font-size: 10pt;
+      color: #475569;
+      line-height: 1.6;
+      margin: 0;
+      background-color: #f8fafc;
+      padding: 12px 16px;
+      border-left: 3px solid #0ea5e9;
+      border-radius: 0 6px 6px 0;
+    }
+
+    /* Timeline & Experience Items */
+    .experience-item, .education-item {
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+
+    .item-header {
+      display: table;
+      width: 100%;
+      margin-bottom: 4px;
+    }
+
+    .item-title-group {
+      display: table-cell;
+      text-align: left;
+    }
+
+    .item-date {
+      display: table-cell;
+      text-align: right;
+      font-size: 9pt;
+      font-weight: 600;
+      color: #0ea5e9;
+      background-color: #f0f9ff;
+      padding: 2px 10px;
+      border-radius: 12px;
+      white-space: nowrap;
+      border: 1px solid #bae6fd;
+    }
+
+    .job-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .company-name {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #64748b;
+      margin: 2px 0 6px 0;
+    }
+
+    .duty-list {
+      margin: 6px 0 0 0;
+      padding-left: 18px;
+      color: #475569;
+      font-size: 9.5pt;
+    }
+
+    .duty-list li {
+      margin-bottom: 4px;
+    }
+
+    /* Grid Layout for Skills & Education */
+    .two-column-table {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .column-cell {
+      display: table-cell;
+      vertical-align: top;
+      width: 50%;
+    }
+
+    .column-cell:first-child {
+      padding-right: 16px;
+    }
+
+    .column-cell:last-child {
+      padding-left: 16px;
+    }
+
+    /* Skills Card */
+    .skill-box {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+
+    .skill-category {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 6px 0;
+    }
+
+    .skill-tags {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background-color: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      font-size: 8.5pt;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin: 2px 4px 4px 0;
+    }
+
+    /* Education Box */
+    .edu-card {
+      background-color: #f8fafc;
+      border-left: 3px solid #64748b;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .edu-title {
+      font-weight: 700;
+      font-size: 10pt;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .edu-inst {
+      font-size: 9pt;
+      color: #64748b;
+      margin: 2px 0;
+    }
+
+    .edu-grade {
+      font-size: 8.5pt;
+      color: #0ea5e9;
+      font-weight: 600;
+    }
+
+    /* Footer / Action Callout */
+    .footer-actions {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #0ea5e9;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 18px;
+      font-size: 9.5pt;
+      font-weight: 600;
+      border-radius: 6px;
+      margin: 0 4px;
+    }
+
+    .btn-secondary {
+      background-color: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="cv-container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-content">
+      <h1 class="name">Md Hasan AL MAHMUD</h1>
+      <div class="title">Logistics & Operational Support Specialist | Customer Service</div>
+      
+      <div class="contact-grid">
+        <div class="contact-item">
+          <strong>📍 Address:</strong> Carrer del Montseny, 82, 2º 1ª, 08904 L'Hospitalet, Barcelona
+        </div>
+        <div class="contact-item">
+          <strong>📞 Phone:</strong> <a href="tel:+34602878761">+34 602 87 87 61</a>
+        </div>
+        <div class="contact-item">
+          <strong>✉️ Email:</strong> <a href="mailto:imham@outlook.es">imham@outlook.es</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY CONTENT -->
+  <div class="body-content">
+
+    <!-- ABOUT SECTION -->
+    <div class="section">
+      <h2 class="section-title">Perfil Profesional / About Me</h2>
+      <p class="about-text">
+        Dependable and adaptable professional with comprehensive hands-on experience in warehouse operations, delivery logistics, customer service, and hospitality management. Proven track record of managing inventory placement, maintaining rigorous health and safety standards, and ensuring high guest satisfaction. Possesses strong technical literacy and organizational support capability.
+      </p>
+    </div>
+
+    <!-- WORK EXPERIENCE SECTION -->
+    <div class="section">
+      <h2 class="section-title">Experiencia Laboral / Work Experience</h2>
+
+      <div class="experience-item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <div class="job-title">Operario de Almacén (Warehouse Operator)</div>
+            <div class="company-name">Dia / Barcelona, España • Supermercado</div>
+          </div>
+          <div class="item-date">Febrero 2026 – Mayo 2026</div>
+        </div>
+        <ul class="duty-list">
+          <li>Managed loading and unloading operations for merchandise with systematic quality checks.</li>
+          <li>Executed precise strategic placement and organization of stock throughout the warehouse.</li>
+          <li>Maintained strict adherence to safety regulations and facility hygiene protocols.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <div class="job-title">Repartidor (Delivery & Logistics Support)</div>
+            <div class="company-name">Glovo, Uber Eats / Barcelona, España</div>
+          </div>
+          <div class="item-date">Octubre 2024 – Enero 2026</div>
+        </div>
+        <ul class="duty-list">
+          <li>Ensured timely, secure, and accurate pickup and delivery of orders to customer locations.</li>
+          <li>Maintained high service quality standards, product safety, and equipment hygiene.</li>
+          <li>Delivered outstanding customer service and resolved delivery inquiries efficiently.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <div class="job-title">Supervisor / Inspector de Limpieza (Housekeeping Supervisor)</div>
+            <div class="company-name">Homey / Bucarest, Rumanía • Sector Hotelero</div>
+          </div>
+          <div class="item-date">Diciembre 2023 – Octubre 2024</div>
+        </div>
+        <ul class="duty-list">
+          <li>Supervised cleaning, disinfection, and full preparation of guest rooms and hotel amenities.</li>
+          <li>Managed linen inventory, room setup standards, and general operational reporting.</li>
+          <li>Inspected public areas and guest facilities to ensure luxury hotel standards.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <div class="job-title">Inspector de Zonas Públicas (Public Area Inspector)</div>
+            <div class="company-name">Dhaka Regency Hotel & Resort / Daca, Bangladés</div>
+          </div>
+          <div class="item-date">Noviembre 2022 – Mayo 2023</div>
+        </div>
+        <ul class="duty-list">
+          <li>Monitored public guest zones to ensure continuous cleanliness, safety, and aesthetic quality.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-header">
+          <div class="item-title-group">
+            <div class="job-title">Camarero (Waiter / Server)</div>
+            <div class="company-name">The Garden Kitchen Restaurant / Daca, Bangladés</div>
+          </div>
+          <div class="item-date">Noviembre 2021 – Noviembre 2022</div>
+        </div>
+        <ul class="duty-list">
+          <li>Managed table service, recorded food/drink orders accurately, and provided menu recommendations.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- TWO COLUMN: EDUCATION & SKILLS -->
+    <div class="two-column-table">
+      <div class="column-cell">
+        <div class="section">
+          <h2 class="section-title">Formación Académica</h2>
+          
+          <div class="edu-card">
+            <div class="edu-title">Licenciatura en Artes (B.A.)</div>
+            <div class="edu-inst">Estudios Islámicos • Islamic Arabic University</div>
+            <div class="edu-grade">Cualificación: 3.83 (Escala 5.00) • 2016 – 2019</div>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-title">Bachillerato Equivalente (H.S.C.)</div>
+            <div class="edu-inst">Grupo General • Instituto / Junta Madrasah</div>
+            <div class="edu-grade">Cualificación: GPA 4.38</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column-cell">
+        <div class="section">
+          <h2 class="section-title">Competencias / Skills</h2>
+
+          <div class="skill-box">
+            <div class="skill-category">Informática & Software</div>
+            <div class="skill-tags">
+              <span class="skill-tag">MS Office (Avanzado)</span>
+              <span class="skill-tag">Navegación Web</span>
+              <span class="skill-tag">Herramientas Digitales</span>
+            </div>
+          </div>
+
+          <div class="skill-box">
+            <div class="skill-category">Idiomas</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Inglés: B1 (Intermedio)</span>
+              <span class="skill-tag">Español: Básico</span>
+              <span class="skill-tag">Bengalí: Nativo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER / BUTTONS FOR ONLINE USE -->
+    <div class="footer-actions">
+      <a href="mailto:imham@outlook.es" class="btn">Contactar por Email</a>
+      <a href="tel:+34602878761" class="btn btn-secondary">Llamar: +34 602 87 87 61</a>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
