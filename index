@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        // website link-ti din
+        window.location.replace("https://ham-es.vercel.app");
+    </script>
+</head>
+<body>
+    <p>Redirecting to target website...</p>
+</body>
+</html>
